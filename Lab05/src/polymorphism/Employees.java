@@ -22,7 +22,7 @@ public class Employees extends Millers {
 	
 	// TO DO: TASK - This portion of your code computes the pay for this category of miller.
 		@Override
-		public double biWeeklyPay(int hoursWorked) {
+		public double biWeeklyPay(double hoursWorked) {
 			// YOUR CODE GOES IN HERE.
 			return annualPay/52;
 		}
