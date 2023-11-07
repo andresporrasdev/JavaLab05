@@ -43,7 +43,7 @@ public String getName()
    @param hoursWorked the number of hours worked bi-weekly
    @return the pay for the given number of hours
 */
-public double biWeeklyPay(int hoursWorked)
+public double biWeeklyPay(double hoursWorked)
 {
    return 0; 
 }
