@@ -24,7 +24,7 @@ public class Employees extends Millers {
 		@Override
 		public double biWeeklyPay(double hoursWorked) {
 			// YOUR CODE GOES IN HERE.
-			return annualPay/52;
+			return annualPay/26;
 		}
 }
 
