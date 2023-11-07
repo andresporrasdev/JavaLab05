@@ -10,7 +10,7 @@ You must implement the bi-weekly pay for the employee according to instructions 
 // TO DO: TASK 1 - YOUR CODE FOR THE CLASS GOES HERE
 // Declare the class and any variable
 public class Supervisors extends Employees{
-	double bonusSupervisor;
+	private double bonusSupervisor;
 	// YOUR Constructor code goes here!!!
 	/**
     TO DO: TASK 2 - Constructs a supervisor with a given name, annual pay and bi-weekly bonus.
