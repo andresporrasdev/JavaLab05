@@ -1,0 +1,17 @@
+
+SAMPLE OUTPUTS FOR LAB 5 - POLYMORPHISM
+
+
+Enter the hours done by Abby, Obi: 40
+Total Pay for this miller is: 1200.0
+
+Enter the hours done by Andrew, Goodman: 40
+Total Pay for this miller is: 1000.0
+
+Enter the hours done by Gloria, Myers: 40
+Total Pay for this miller is: 2050.0
+
+
+// Note that this is just a sample showing the different components of the
+// payment categories. Using 76 hours bi-weekly, the numbers in your output
+// file will be different. 
