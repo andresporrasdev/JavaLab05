@@ -24,8 +24,8 @@ public class Supervisors extends Employees{
 	}
 	// TO DO: TASK 3 - YOUR CODE FOR COMPUTING THE BI-WEEKLY PAY FOR THIS CATEGORY OF MILLER GOES HERE.
 	@Override
-	public double biWeeklyPay(int hoursWorked){
-		return hoursWorked*bonusSupervisor;
+	public double biWeeklyPay(double hoursWorked){
+		return super.biWeeklyPay(hoursWorked)+bonusSupervisor;
 	}
 // Hint: Note the relationship between this class and any other class. How will you apply that to your code?
 
