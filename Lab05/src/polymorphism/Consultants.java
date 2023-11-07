@@ -21,7 +21,7 @@ class Consultants extends Millers{
 
 	// TO DO: TASK 3 - THIS PORTION OF YOUR CODE COMPUTES THE 
 	@Override
-	public double biWeeklyPay(int hoursWorked) {
+	public double biWeeklyPay(double hoursWorked) {
 	   double pay = hoursWorked * consultantWage;
 	
 	// In this part of your code, an overtime amount is added if the Consultant works for more than 76 hours bi-weekly.
