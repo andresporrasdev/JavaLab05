@@ -1,4 +1,18 @@
+/*
+* Title Assessment: Lab05
+* Student Name: Andres Camilo Porras Becerra
+* Due Date: 12 Nov
+* Description: This program shows polymorphism by applying a method to objects of different classes. 
+* Professor Name: Islam Gomaa
+* Course CST8284 Section 331
+*/
 
+/**
+ * This package shows how to use polymorphism by applying a method to objects of different classes
+ * @author Andres Porras
+ * @version 1.0
+ * @see lab05
+*/
 package polymorphism;
 
 /**
@@ -10,6 +24,9 @@ YOU DO NOT NEED TO DO MODIFIY THIS CODE.
 
 public class Millers
 {
+	/**
+	 * Variable for save the name of the Miller
+	 */
 private String name;
 
 /**
