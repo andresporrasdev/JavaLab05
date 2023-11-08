@@ -14,7 +14,6 @@
 */
 package polymorphism;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -33,90 +32,67 @@ public class MillersTest
 	 * @param args No arguments required for main method
 	 */
    public static void main(String[] args) {
-	   //ArrayList for saving the Millers and add as many Millers as the user wants
-	   ArrayList<Millers> millersArray = new ArrayList<Millers>();
 	   String name;
-	   double wage;
-	   double bonus;
+	   double wage=0;
+	   double bonus=0;
 	   // Variable that save the selection from the user in the main menu
 	   int millerCategory;
-	   // Variable that save the index in the ArrayList millersArray
-	   int millerCounter=0;
-	   System.out.printf("SAMPLE OUTPUTS FOR LAB 5 - POLYMORPHISM\r\n\n");
+	   // Variable that save the index in the array of millersArray
+	   int millerCounter;
+	   Scanner scn = new Scanner(System.in);
+	   System.out.printf("SAMPLE OUTPUTS FOR LAB 5 - POLYMORPHISM\n\n");
+	   System.out.printf("How many millers do you want to enter ?\n");
+	   millerCounter=scn.nextInt();
+	   Millers[] millersArray = new Millers[millerCounter];
 	   do {
-		   Scanner scn = new Scanner(System.in);
-		   System.out.printf("Select the cateogory of this Miller: \n1. Consultan \n2. Employee \n3. Supervisor\n4. Exit\n");
+		   System.out.printf("Select the category of this Miller: \n1. Consultan \n2. Employee \n3. Supervisor\n");
 		   //Save the selection from the user in the variable millerCategory
 		   millerCategory=scn.nextInt();
-		   //Start of the menu in console
-		   switch (millerCategory) {
+		   //Start to store data in the millerCategory
+	   		System.out.printf("Write the name of the Miller: ");
+	        name=scn.next();
+	        switch (millerCategory) {
 		   	case 1: {
-		   		System.out.printf("Write the name of the Consultant: ");
-		        name=scn.next();
 		        System.out.printf("Enter the hours done by %s : ", name);
 		        wage=scn.nextDouble();
 		        Consultants consultant = new Consultants(name, wage);
-		        //Add the consultant to the ArrayList of Millers
-		        millersArray.add(consultant);
-		        //System.out.printf("Total Pay for this miller is: %.1f\n", consultant.biWeeklyPay(wage));
-		        //Display in console the payment of the user
-		        System.out.printf("Total Pay for this miller is: %.1f\n", millersArray.get(millerCounter).biWeeklyPay(wage));
+		        //Add the consultant to the array of Millers
+		        millersArray[millerCounter-1]= consultant;
+		        //Display in console the payment of the miller
+		        System.out.printf("Total Pay for this miller is: %.1f\n\n", millersArray[millerCounter-1].biWeeklyPay(wage));
 		        //Add up a number in the variable millerCounter for allow to the next entry to store the Miller in the next index available
-		        millerCounter++;
-		        //Ask the user if they want to continue adding Millers or finish the program
-		        System.out.printf("Do you want to calculte the wage for another Miller? true or false\n");
-		        boolean continueProgram=scn.nextBoolean();
-		        if (continueProgram) {
-		        	break;
-		        } else{
-		        	millerCategory=4;
-			        break;
-		         	}
-		     	}
+		        millerCounter--;
+		        break;
+		   		}
 		     case 2: {
-		    	 System.out.printf("Write the name of the Employee: ");
-		         name=scn.next();
 		         System.out.printf("Enter the anual pay for %s : ", name);
 		         wage=scn.nextDouble();
 		         Employees employee = new Employees(name, wage);
-		         millersArray.add(employee);
-		         //System.out.printf("Total Pay for this miller is: %.1f\n", employee.biWeeklyPay(wage));
-		         System.out.printf("Total Pay for this miller is: %.1f\n", millersArray.get(millerCounter).biWeeklyPay(wage)); 
-		         millerCounter++;
-		         System.out.printf("Do you want to calculte the wage for another Miller? true or false\n");
-		         boolean continueProgram=scn.nextBoolean();
-		         if (continueProgram) {
-			        break;
-		         } else{
-		        	millerCategory=4;
-			        break;
-		         	}
-		     	}
+		         //Add the consultant to the array of Millers
+		         millersArray[millerCounter-1]= employee;
+			     //Display in console the payment of the miller
+			     System.out.printf("Total Pay for this miller is: %.1f\n\n", millersArray[millerCounter-1].biWeeklyPay(wage));
+		         millerCounter--;
+		         break;
+		   		}
 		     case 3: {
-		         System.out.printf("Write the name of the Supervisor: ");
-		         name=scn.next();
 		         System.out.printf("Enter the anual pay for %s : ", name);
 		         wage=scn.nextDouble();
 		         System.out.printf("Enter the bonus for %s : ", name);
 		         bonus=scn.nextDouble();
 		         Supervisors supervisor = new Supervisors(name, wage,bonus);
-		         millersArray.add(supervisor);
-		        // System.out.printf("Total Pay for this miller is: %.1f\n", supervisor.biWeeklyPay(wage));
-		         System.out.printf("Total Pay for this miller is: %.1f\n", millersArray.get(millerCounter).biWeeklyPay(wage)); 
-		         millerCounter++;
-		         System.out.printf("Do you want to calculte the wage for another Miller? true or false\n");
-		         boolean continueProgram=scn.nextBoolean();
-		         if (continueProgram) {
-			        break;
-		         } else{
-		        	millerCategory=4;
-			        break;
-		         	}
-		     	}
-		     default: System.out.printf("Program Ended");
-		     scn.close();
+		         //Add the consultant to the array of Millers
+		         millersArray[millerCounter-1]= supervisor;
+		       //Display in console the payment of the miller
+			     System.out.printf("Total Pay for this miller is: %.1f\n\n", millersArray[millerCounter-1].biWeeklyPay(wage));
+		         millerCounter--;
+		         break;
+		   		}
+		     default: {System.out.printf("Please, Select the category of this Miller: \\n1. Consultan \\n2. Employee \\n3. Supervisor\\n\"");
+		     break;}
 	     	}
-     	} while (millerCategory!=4); //4 Means the number of the selection of the user in the menu and the program will finish if the selection is 4
+     	} while (millerCounter>0);
+	     scn.close();
 	 System.out.printf("Program Ended\n");
    	}
 }
